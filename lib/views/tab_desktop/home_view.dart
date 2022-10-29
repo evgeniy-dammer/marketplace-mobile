@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:emenu_client/models/spotlight_best_top_food.dart';
 import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/swiggy/best_in_safety_view.dart';
+import 'package:emenu_client/views/mobile/swiggy/popular_food_view.dart';
 import 'package:emenu_client/views/mobile/swiggy/food_groceries_availability_view.dart';
 import 'package:emenu_client/views/mobile/swiggy/in_the_spotlight_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/offers/offer_banner_view.dart';
+import 'package:emenu_client/views/mobile/swiggy/banner/banner_view.dart';
 import 'package:emenu_client/views/mobile/swiggy/popular_brand_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/popular_categories_view.dart';
+import 'package:emenu_client/views/mobile/swiggy/categories_view.dart';
 import 'package:emenu_client/views/mobile/swiggy/restaurants/restaurant_vertical_list_view.dart';
 import 'package:emenu_client/views/mobile/swiggy/swiggy_safety_banner_view.dart';
 import 'package:emenu_client/views/mobile/swiggy/swiggy_screen.dart';
@@ -45,15 +45,15 @@ class _Body extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            OfferBannerView(),
+            BannerView(),
             PopularBrandsView(),
             const CustomDividerView(),
             InTheSpotlightView(),
             const CustomDividerView(),
-            PopularCategoriesView(),
+            CategoriesView(),
             const CustomDividerView(),
             const SwiggySafetyBannerView(),
-            BestInSafetyViews(),
+            PopularFoodView(),
             const CustomDividerView(),
             TopOffersViews(),
             const CustomDividerView(),

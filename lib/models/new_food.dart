@@ -1,56 +1,56 @@
-class TopPicksFood {
-  const TopPicksFood({
+class NewFood {
+  const NewFood({
     required this.image,
     required this.name,
-    required this.minutes,
+    required this.time,
   });
 
   final String image;
   final String name;
-  final String minutes;
+  final int time;
 
-  static List<TopPicksFood> getTopPicksfoods() {
+  static List<NewFood> getNewFoods() {
     return const [
-      TopPicksFood(
+      NewFood(
           image: 'assets/images/food5.jpg',
           name: 'Murugan Idli Shop',
-          minutes: '42 mins'),
-      TopPicksFood(
+          time: 42),
+      NewFood(
           image: 'assets/images/food4.jpg',
           name: 'Thalappakati Biryani Hotel',
-          minutes: '32 mins'),
-      TopPicksFood(
+          time: 32),
+      NewFood(
           image: 'assets/images/food1.jpg',
           name: 'Sangeetha',
-          minutes: '26 mins'),
-      TopPicksFood(
+          time: 26),
+      NewFood(
           image: 'assets/images/food2.jpg',
           name: 'Hotel Chennai',
-          minutes: '38 mins'),
-      TopPicksFood(
+          time: 38),
+      NewFood(
           image: 'assets/images/food3.jpg',
           name: 'Shri Balaajee',
-          minutes: '53 mins'),
-      TopPicksFood(
+          time: 53),
+      NewFood(
           image: 'assets/images/food4.jpg',
           name: 'Namma Veedu Vasantha',
-          minutes: '22 mins'),
-      TopPicksFood(
+          time: 22),
+      NewFood(
           image: 'assets/images/food6.jpg',
           name: 'SK Parota Stall',
-          minutes: '13 mins'),
-      TopPicksFood(
+          time: 13),
+      NewFood(
           image: 'assets/images/food7.jpg',
           name: 'Aasife Biryani',
-          minutes: '31 mins'),
-      TopPicksFood(
+          time: 31),
+      NewFood(
           image: 'assets/images/food8.jpg',
           name: 'Jesus Fast Food',
-          minutes: '44 mins'),
-      TopPicksFood(
+          time: 44),
+      NewFood(
           image: 'assets/images/food9.jpg',
           name: 'Ananda Bhavan',
-          minutes: '55 mins'),
+          time: 55),
     ];
   }
 }

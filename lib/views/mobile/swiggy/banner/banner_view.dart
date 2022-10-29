@@ -4,7 +4,7 @@ import 'package:emenu_client/widgets/responsive.dart';
 
 import '../groceries/grocery_screen.dart';
 
-class OfferBannerView extends StatelessWidget {
+class BannerView extends StatelessWidget {
   final List<String> images = [
     'assets/images/banner1.jpg',
     'assets/images/banner2.jpg',
@@ -12,7 +12,7 @@ class OfferBannerView extends StatelessWidget {
     'assets/images/banner4.jpg',
   ];
 
-  OfferBannerView({Key? key}) : super(key: key);
+  BannerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,34 +20,24 @@ class OfferBannerView extends StatelessWidget {
 
     return InkWell(
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 15.0),
+        margin: const EdgeInsets.symmetric(vertical: 5.0),
         height: isTabletDesktop ? 260.0 : 180.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(isTabletDesktop ? 13.0 : 10.0),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(isTabletDesktop ? 13.0 : 10.0)),
         child: Swiper(
           itemHeight: 100,
           duration: 500,
           itemWidth: double.infinity,
           pagination: const SwiperPagination(),
           itemCount: images.length,
-          itemBuilder: (BuildContext context, int index) => Image.asset(
-            images[index],
-            fit: BoxFit.cover,
-          ),
+          itemBuilder: (BuildContext context, int index) => Image.asset(images[index], fit: BoxFit.cover),
           autoplay: true,
           viewportFraction: 1.0,
-          scale: 0.9,
-        ),
+          scale: 0.9
+        )
       ),
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const GroceryScreen(),
-          ),
-        );
-      },
+        //Navigator.push(context, MaterialPageRoute(builder: (context) => const GroceryScreen()));
+      }
     );
   }
 }

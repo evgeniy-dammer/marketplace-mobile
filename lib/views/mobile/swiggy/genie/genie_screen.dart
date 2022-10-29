@@ -1,16 +1,14 @@
+import 'package:emenu_client/views/mobile/home_bottom_navigation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/genie.dart';
 import 'package:emenu_client/utils/app_colors.dart';
 import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/custom_divider_view.dart';
+import 'package:emenu_client/views/mobile/scanner/scan_qr_code_view.dart';
 
 class GenieScreen extends StatelessWidget {
   const GenieScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final services = Genie.getGenieServices();
-
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -22,7 +20,7 @@ class GenieScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                icon: const Icon(Icons.language, color: Colors.white),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -32,131 +30,78 @@ class GenieScreen extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
-                      UIHelper.verticalSpaceMedium(),
+                      UIHelper.verticalSpaceLarge(),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text(
-                                'Genie',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline4!
-                                    .copyWith(color: Colors.white),
-                              ),
-                              UIHelper.horizontalSpaceSmall(),
-                              Image.asset(
-                                'assets/images/delivery-boy.png',
-                                height: 50.0,
-                                width: 50.0,
-                              )
-                            ],
+                              UIHelper.verticalSpaceExtraLarge(),
+                              Text('eMenu', style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.white))
+                            ]
                           ),
-                          UIHelper.verticalSpaceExtraSmall(),
-                          Text(
-                            'Anything you need, delivered',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.grey[200],
-                                      fontSize: 17.0,
-                                    ),
+                          UIHelper.verticalSpaceMedium(),
+                          Text('Welcome to a first mobile menu app',
+                            style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.grey[200], fontSize: 17.0, fontWeight: FontWeight.bold),
+                          ),
+                          Text('in Turkmenistan!',
+                            style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.grey[200], fontSize: 17.0, fontWeight: FontWeight.bold),
                           )
-                        ],
+                        ]
                       ),
-                      UIHelper.verticalSpaceMedium(),
+                      UIHelper.verticalSpaceLarge(),
                       Container(
                         padding: const EdgeInsets.all(20.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            const _HeaderView(
-                              title: 'Pickup or Drop any items',
-                              buttonTitle: 'ADD PICKUP DROP DETAILS',
+                            Text(
+                              'Open Scanner app on your mobile phone and scan QR code with WiFi icon to connect to our WiFi point',
+                              style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 14.0, fontWeight: FontWeight.bold)
                             ),
-                            const CustomDividerView(dividerHeight: 3.0),
+                            UIHelper.verticalSpaceMedium(),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                ClipOval(
+                                  child: Container(
+                                    padding: const EdgeInsets.all(3.0),
+                                    child: Image.asset('assets/icons/wifi.png', height: 60.0, width: 60.0)
+                                  )
+                                )
+                              ]
+                            ),
                             UIHelper.verticalSpaceMedium(),
                             Text(
-                              'Some things we can pick or drop for you',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1!
-                                  .copyWith(fontSize: 14.0),
-                            ),
-                            UIHelper.verticalSpaceMedium(),
-                            LimitedBox(
-                              maxHeight: 100.0,
-                              child: ListView.builder(
-                                itemCount: services.length,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) => SizedBox(
-                                  width: 80.0,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      ClipOval(
-                                        child: Container(
-                                          padding: const EdgeInsets.all(10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.grey[200],
-                                            boxShadow: const <BoxShadow>[
-                                              BoxShadow(
-                                                color: Colors.grey,
-                                                blurRadius: 3.0,
-                                                spreadRadius: 2.0,
-                                              )
-                                            ],
-                                          ),
-                                          child: Image.asset(
-                                            services[index].image,
-                                            height: 30.0,
-                                            width: 30.0,
-                                            // fit: BoxFit.contain,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        services[index].title,
-                                        textAlign: TextAlign.center,
-                                        maxLines: 2,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1!
-                                            .copyWith(fontSize: 13.5),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
+                              'With buttons below you can open a menu.',
+                              style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 14.0, fontWeight: FontWeight.bold)
                             )
-                          ],
-                        ),
+                          ]
+                        )
                       ),
                       UIHelper.verticalSpaceMedium(),
                       Container(
                         padding: const EdgeInsets.all(20.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: const _HeaderView(
-                          title: 'Buy Anything from any store',
-                          buttonTitle: 'FIND A STORE',
-                        ),
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                        child: const _HeaderView(title: 'Take a new table', buttonTitle: 'SCAN QR CODE', type: 1)
                       ),
-                    ],
-                  ),
-                ),
+                      UIHelper.verticalSpaceMedium(),
+                      Container(
+                        padding: const EdgeInsets.all(20.0),
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                        child: const _HeaderView(title: 'Join existing table', buttonTitle: 'SCAN QR CODE', type: 2)
+                      )
+                    ]
+                  )
+                )
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }
@@ -164,11 +109,13 @@ class GenieScreen extends StatelessWidget {
 class _HeaderView extends StatelessWidget {
   final String title;
   final String buttonTitle;
+  final int type;
 
   const _HeaderView({
     Key? key,
     required this.title,
     required this.buttonTitle,
+    required this.type,
   }) : super(key: key);
 
   @override
@@ -176,13 +123,7 @@ class _HeaderView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headline6!.copyWith(
-                fontSize: 17.0,
-                fontWeight: FontWeight.bold,
-              ),
-        ),
+        Text(title, style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 17.0, fontWeight: FontWeight.bold)),
         UIHelper.verticalSpaceMedium(),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -192,16 +133,16 @@ class _HeaderView extends StatelessWidget {
             style: ElevatedButton.styleFrom(backgroundColor: darkOrange),
             child: Text(
               buttonTitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .subtitle2!
-                  .copyWith(color: Colors.white, fontSize: 14.0),
+              style: Theme.of(context).textTheme.subtitle2!.copyWith(color: Colors.white, fontSize: 14.0)
             ),
-            onPressed: () {},
-          ),
+            onPressed: () async {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeBottomNavigationScreen()));
+              //Navigator.push(context, MaterialPageRoute(builder: (context) => ScanQRCodeScreen(type: type)));
+            }
+          )
         ),
         UIHelper.verticalSpaceMedium(),
-      ],
+      ]
     );
   }
 }

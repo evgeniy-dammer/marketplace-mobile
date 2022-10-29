@@ -1,5 +1,5 @@
-class PopularCategory {
-  const PopularCategory({
+class Category {
+  const Category({
     required this.image,
     required this.name,
   });
@@ -7,80 +7,80 @@ class PopularCategory {
   final String image;
   final String name;
 
-  static List<PopularCategory> getPopularCategories() {
+  static List<Category> getCategories() {
     return const [
-      PopularCategory(
+      Category(
         image: 'assets/icons/coffee.png',
         name: 'Cold\nBeverages',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/natural-food.png',
         name: 'Veg only',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/only-on-swiggy.png',
         name: 'Only on\nSwiggy',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/offer.png',
         name: 'Offers',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/food.png',
         name: 'Meals',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/milkshake.png',
         name: 'Milkshakes',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/kawaii-sushi.png',
         name: 'Kawaii\n Sushi',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/bread.png',
         name: 'Bread',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/only-on-swiggy.png',
         name: 'Only on\nSwiggy',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/food.png',
         name: 'Meals',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/natural-food.png',
         name: 'Veg only',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/coffee.png',
         name: 'Cold\nBeverages',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/kawaii-sushi.png',
         name: 'Kawaii\n Sushi',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/bread.png',
         name: 'Bread',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/food.png',
         name: 'Meals',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/milkshake.png',
         name: 'Milkshakes',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/coffee.png',
         name: 'Cold\nBeverages',
       ),
-      PopularCategory(
+      Category(
         image: 'assets/icons/natural-food.png',
         name: 'Veg only',
-      ),
+      )
     ];
   }
 }

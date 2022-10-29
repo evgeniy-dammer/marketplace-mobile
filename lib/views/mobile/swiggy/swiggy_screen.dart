@@ -6,19 +6,19 @@ import 'package:emenu_client/widgets/custom_divider_view.dart';
 import 'package:emenu_client/widgets/responsive.dart';
 
 import 'all_restaurants/all_restaurants_screen.dart';
-import 'best_in_safety_view.dart';
+import 'popular_food_view.dart';
 import 'food_groceries_availability_view.dart';
 import 'genie/genie_view.dart';
 import 'in_the_spotlight_view.dart';
 import 'indian_food/indian_food_view.dart';
-import 'offers/offer_banner_view.dart';
+import 'banner/banner_view.dart';
 import 'offers/offer_screen.dart';
 import 'popular_brand_view.dart';
-import 'popular_categories_view.dart';
+import 'categories_view.dart';
 import 'restaurants/restaurant_vertical_list_view.dart';
 import 'swiggy_safety_banner_view.dart';
 import 'top_offer_view.dart';
-import 'top_picks_for_you_view.dart';
+import 'new_food_view.dart';
 
 class SwiggyScreen extends StatelessWidget {
   const SwiggyScreen({Key? key}) : super(key: key);
@@ -36,98 +36,70 @@ class SwiggyScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    const FoodGroceriesAvailabilityView(),
-                    TopPicksForYouView(),
-                    OfferBannerView(),
                     const CustomDividerView(),
-                    IndianFoodView(),
+                    CategoriesView(),
                     const CustomDividerView(),
-                    InTheSpotlightView(),
+                    BannerView(),
                     const CustomDividerView(),
-                    PopularBrandsView(),
+                    NewFoodView(),
                     const CustomDividerView(),
-                    const SwiggySafetyBannerView(),
-                    BestInSafetyViews(),
+                    PopularFoodView(),
                     const CustomDividerView(),
-                    TopOffersViews(),
-                    const CustomDividerView(),
-                    const GenieView(),
-                    const CustomDividerView(),
-                    PopularCategoriesView(),
-                    const CustomDividerView(),
-                    RestaurantVerticalListView(
-                      title: 'Popular Restaurants',
-                      restaurants:
-                          SpotlightBestTopFood.getPopularAllRestaurants(),
-                    ),
-                    const CustomDividerView(),
-                    RestaurantVerticalListView(
-                      title: 'All Restaurants Nearby',
-                      restaurants:
-                          SpotlightBestTopFood.getPopularAllRestaurants(),
-                      isAllRestaurantNearby: true,
-                    ),
-                    const SeeAllRestaurantBtn(),
-                    const LiveForFoodView(),
-                  ],
-                ),
-              ),
+
+                    //const FoodGroceriesAvailabilityView(),
+                    //const CustomDividerView(),
+                    //IndianFoodView(),
+                    //InTheSpotlightView(),
+                    //const CustomDividerView(),
+                    //PopularBrandsView(),
+                    //const CustomDividerView(),
+                    //const SwiggySafetyBannerView(),
+                    //TopOffersViews(),
+                    //const CustomDividerView(),
+                    //const GenieView(),
+                    //const CustomDividerView(),
+                    //const CustomDividerView(),
+                    //RestaurantVerticalListView(title: 'Popular Restaurants', restaurants: SpotlightBestTopFood.getPopularAllRestaurants(),),
+                    //const CustomDividerView(),
+                    //RestaurantVerticalListView(title: 'All Restaurants Nearby', restaurants: SpotlightBestTopFood.getPopularAllRestaurants(), isAllRestaurantNearby: true),
+                    //const SeeAllRestaurantBtn(),
+                    //const LiveForFoodView(),
+                  ]
+                )
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 
   Container _buildAppBar(BuildContext context) => Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15.0),
-        height: 60.0,
-        child: Row(
-          children: <Widget>[
-            Text(
-              'Other',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4!
-                  .copyWith(fontSize: 21.0),
-            ),
-            UIHelper.horizontalSpaceExtraSmall(),
-            const Padding(
-              padding: EdgeInsets.only(top: 4.0),
-              child: Icon(Icons.keyboard_arrow_down),
-            ),
-            const Spacer(),
-            const Icon(Icons.local_offer),
-            UIHelper.horizontalSpaceExtraSmall(),
-            InkWell(
-              child: Container(
-                padding: const EdgeInsets.all(5.0),
-                child: Text(
-                  'Offer',
-                  style: Theme.of(context)
-                      .textTheme
-                      .subtitle2!
-                      .copyWith(fontSize: 18.0),
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const OffersScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      );
+    margin: const EdgeInsets.symmetric(horizontal: 15.0),
+    height: 60.0,
+    child: Row(
+      children: <Widget>[
+        Text('eMenu', style: Theme.of(context).textTheme.headline4!.copyWith(fontSize: 21.0)),
+        /*UIHelper.horizontalSpaceExtraSmall(),
+        const Spacer(),
+        const Icon(Icons.local_offer),
+        UIHelper.horizontalSpaceExtraSmall(),
+        InkWell(
+          child: Container(
+            padding: const EdgeInsets.all(5.0),
+            child: Text('Offer', style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 18.0))
+          ),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const OffersScreen()));
+          }
+        )*/
+      ]
+    )
+  );
 }
 
 class SeeAllRestaurantBtn extends StatelessWidget {
-  const SeeAllRestaurantBtn({
-    Key? key,
-  }) : super(key: key);
+  const SeeAllRestaurantBtn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -141,31 +113,18 @@ class SeeAllRestaurantBtn extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(backgroundColor: darkOrange),
         onPressed: isTabletDesktop
-            ? () {}
-            : () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AllRestaurantsScreen(),
-                  ),
-                );
-              },
-        child: Text(
-          'See all restaurants',
-          style: Theme.of(context)
-              .textTheme
-              .subtitle2!
-              .copyWith(color: Colors.white, fontSize: 19.0),
-        ),
-      ),
+          ? () {}
+          : () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AllRestaurantsScreen()));
+            },
+        child: Text('See all restaurants', style: Theme.of(context).textTheme.subtitle2!.copyWith(color: Colors.white, fontSize: 19.0),)
+      )
     );
   }
 }
 
 class LiveForFoodView extends StatelessWidget {
-  const LiveForFoodView({
-    Key? key,
-  }) : super(key: key);
+  const LiveForFoodView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -180,30 +139,17 @@ class LiveForFoodView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'LIVE\nFOR\nFOOD',
+              Text('LIVE\nFOR\nFOOD',
                 style: Theme.of(context).textTheme.headline4!.copyWith(
-                      color: Colors.grey[400],
-                      fontSize: 80.0,
-                      letterSpacing: 0.2,
-                      height: 0.8,
-                    ),
+                  color: Colors.grey[400],
+                  fontSize: 80.0,
+                  letterSpacing: 0.2,
+                  height: 0.8
+                )
               ),
               UIHelper.verticalSpaceLarge(),
-              Text(
-                'MADE BY FOOD LOVERS',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(color: Colors.grey),
-              ),
-              Text(
-                'SWIGGY HQ, BANGALORE',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(color: Colors.grey),
-              ),
+              Text('MADE BY FOOD LOVERS', style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.grey)),
+              Text('SWIGGY HQ, BANGALORE', style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.grey)),
               UIHelper.verticalSpaceExtraLarge(),
               Row(
                 children: <Widget>[
@@ -211,22 +157,18 @@ class LiveForFoodView extends StatelessWidget {
                     height: 1.0,
                     width: MediaQuery.of(context).size.width / 4,
                     color: Colors.grey,
-                  ),
-                ],
+                  )
+                ]
               )
-            ],
+            ]
           ),
           Positioned(
             left: 140.0,
             top: 90.0,
-            child: Image.asset(
-              'assets/images/burger.png',
-              height: 80.0,
-              width: 80.0,
-            ),
+            child: Image.asset('assets/images/burger.png', height: 80.0, width: 80.0)
           )
-        ],
-      ),
+        ]
+      )
     );
   }
 }
