@@ -1,3 +1,1 @@
-# emenu_client
-
-eMenu Client
+# Marketplace Mobile Client
