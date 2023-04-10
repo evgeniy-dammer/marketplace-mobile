@@ -1,6 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
 
 import '../groceries/grocery_screen.dart';
 

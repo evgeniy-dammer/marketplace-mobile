@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.emenu.emenu_client">
+    package="com.marketplace.marketplace_client">
    <application
-        android:label="emenu_client"
+        android:label="marketplace_client"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

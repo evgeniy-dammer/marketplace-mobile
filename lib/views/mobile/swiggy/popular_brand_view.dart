@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/popular_brands.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/swiggy/restaurants/restaurant_detail_screen.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/models/popular_brands.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/views/mobile/swiggy/restaurants/restaurant_detail_screen.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
 
 class PopularBrandsView extends StatelessWidget {
   final brands = PopularBrands.getPopularBrands();

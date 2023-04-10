@@ -1,13 +1,40 @@
+import 'package:marketplace_client/client/client.dart';
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/mobile/spotlight_best_top_food_item.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/mobile/spotlight_best_top_food_item.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
+import 'package:grpc/grpc.dart';
 
-class PopularFoodView extends StatelessWidget {
-  final restaurants = SpotlightBestTopFood.getBestRestaurants();
+import '../../../services/item.pbgrpc.dart';
 
-  PopularFoodView({Key? key}) : super(key: key);
+class PopularFoodView extends StatefulWidget {
+  const PopularFoodView({Key? key}) : super(key: key);
+
+  @override
+  State<PopularFoodView> createState() => _PopularFoodViewState();
+}
+
+class _PopularFoodViewState extends State<PopularFoodView> {
+
+  @override
+  initState() {
+    super.initState();
+  }
+
+  Future<List<Item>>? sendRequest() async {
+    var channel = GrpcClient().getClient("10.0.2.2", 1111);
+    var stub = ItemServiceClient(channel, options: CallOptions(timeout: const Duration(seconds: 30)));
+
+    try {
+      var readRequest = FindAllRequest();
+      var response = await stub.findAll(readRequest);
+      return response.items;
+    } catch (e) {
+        print("ERROROROROR "+ e.toString());
+        return [];
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,20 +81,33 @@ class PopularFoodView extends StatelessWidget {
           UIHelper.verticalSpaceMedium(),
           LimitedBox(
             maxHeight: 270.0,
-            child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: restaurants.length,
-              itemBuilder: (context, index) => SizedBox(
-                width: customWidth,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    SpotlightBestTopFoodItem(restaurant: restaurants[index][0]),
-                    SpotlightBestTopFoodItem(restaurant: restaurants[index][1])
-                  ]
-                )
-              )
+            child: FutureBuilder<List<Item>>(
+              future: sendRequest(),
+              builder: (BuildContext context, AsyncSnapshot<List<Item>> snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: snapshot.data?.length,
+                    itemBuilder: (context, index) {
+                      Item v = snapshot.data![index];
+                      return SizedBox(
+                        width: customWidth,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            SpotlightBestTopFoodItem(restaurant: v),
+                            //SpotlightBestTopFoodItem(restaurant: v)
+                          ]
+                        )
+                      );
+                    }
+                  );
+                }
+                else{
+                  return const SizedBox.shrink();
+                }
+              }
             )
           )
         ]

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/custom_divider_view.dart';
-import 'package:emenu_client/widgets/mobile/search_food_list_item_view.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/custom_divider_view.dart';
+import 'package:marketplace_client/widgets/mobile/search_food_list_item_view.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);

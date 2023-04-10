@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/restaurant_detail.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/custom_divider_view.dart';
-import 'package:emenu_client/widgets/veg_badge_view.dart';
+import 'package:marketplace_client/models/restaurant_detail.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/custom_divider_view.dart';
+import 'package:marketplace_client/widgets/veg_badge_view.dart';
 
 class RestaurantDetailScreen extends StatelessWidget {
   const RestaurantDetailScreen({Key? key}) : super(key: key);

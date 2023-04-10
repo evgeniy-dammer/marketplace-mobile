@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/swiggy/restaurants/restaurant_detail_screen.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/views/mobile/swiggy/restaurants/restaurant_detail_screen.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
+
+import '../../services/item.pb.dart';
 
 class SpotlightBestTopFoodItem extends StatelessWidget {
   const SpotlightBestTopFoodItem({
@@ -10,23 +12,14 @@ class SpotlightBestTopFoodItem extends StatelessWidget {
     required this.restaurant,
   }) : super(key: key);
 
-  final SpotlightBestTopFood restaurant;
+  final Item restaurant;
 
   @override
   Widget build(BuildContext context) {
     final isTabletDesktop = Responsive.isTabletDesktop(context);
 
     return InkWell(
-      onTap: isTabletDesktop
-          ? () {}
-          : () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const RestaurantDetailScreen(),
-                ),
-              );
-            },
+      onTap: isTabletDesktop ? () {} : () {Navigator.push(context, MaterialPageRoute(builder: (context) => const RestaurantDetailScreen()));},
       child: Container(
         margin: const EdgeInsets.all(15.0),
         child: Row(
@@ -36,18 +29,15 @@ class SpotlightBestTopFoodItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
                 color: Colors.white,
                 boxShadow: const <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 2.0,
-                  )
+                  BoxShadow(color: Colors.grey, blurRadius: 2.0)
                 ],
               ),
-              child: Image.asset(
+              child: null /*Image.asset(
                 restaurant.image,
                 height: 100.0,
                 width: 100.0,
                 fit: BoxFit.cover,
-              ),
+              ),*/
             ),
             UIHelper.horizontalSpaceSmall(),
             Expanded(
@@ -65,7 +55,7 @@ class SpotlightBestTopFoodItem extends StatelessWidget {
                         .copyWith(fontSize: 18.0),
                   ),
                   Text(
-                    restaurant.desc,
+                    restaurant.quantity.toString(),
                     maxLines: 2,
                     style: Theme.of(context)
                         .textTheme
@@ -74,7 +64,7 @@ class SpotlightBestTopFoodItem extends StatelessWidget {
                   ),
                   UIHelper.verticalSpaceSmall(),
                   Text(
-                    restaurant.coupon,
+                    restaurant.price.toString(),
                     style: Theme.of(context)
                         .textTheme
                         .bodyText1!
@@ -90,7 +80,7 @@ class SpotlightBestTopFoodItem extends StatelessWidget {
                           color: Colors.grey[600],
                         ),
                         Text(
-                          restaurant.ratingTimePrice,
+                          restaurant.status.toString(),
                           style: const TextStyle(fontSize: 12.0),
                         )
                       ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/indian_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/models/indian_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 import 'indian_delight_screen.dart';
 

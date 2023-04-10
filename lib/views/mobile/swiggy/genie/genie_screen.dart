@@ -1,8 +1,8 @@
-import 'package:emenu_client/views/mobile/home_bottom_navigation_screen.dart';
+import 'package:marketplace_client/views/mobile/home_bottom_navigation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/scanner/scan_qr_code_view.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/views/mobile/scanner/scan_qr_code_view.dart';
 
 class GenieScreen extends StatelessWidget {
   const GenieScreen({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class GenieScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               UIHelper.verticalSpaceExtraLarge(),
-                              Text('eMenu', style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.white))
+                              Text('marketplace', style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.white))
                             ]
                           ),
                           UIHelper.verticalSpaceMedium(),

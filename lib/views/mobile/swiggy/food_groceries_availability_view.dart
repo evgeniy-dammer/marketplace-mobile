@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/swiggy/genie/genie_screen.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/views/mobile/swiggy/genie/genie_screen.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
 
 import 'all_restaurants/all_restaurants_screen.dart';
 import 'genie/genie_grocery_card_view.dart';

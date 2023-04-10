@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/custom_divider_view.dart';
-import 'package:emenu_client/widgets/dotted_seperator_view.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/custom_divider_view.dart';
+import 'package:marketplace_client/widgets/dotted_seperator_view.dart';
 
 class AccountScreen extends StatelessWidget {
   final List<String> titles = [

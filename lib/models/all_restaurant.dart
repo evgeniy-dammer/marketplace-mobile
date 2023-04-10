@@ -1,4 +1,4 @@
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
 
 import 'indian_food.dart';
 

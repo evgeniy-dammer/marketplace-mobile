@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 import '../groceries/grocery_screen.dart';
 

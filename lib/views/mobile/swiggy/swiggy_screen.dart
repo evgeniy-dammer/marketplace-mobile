@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/custom_divider_view.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/custom_divider_view.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
 
 import 'all_restaurants/all_restaurants_screen.dart';
 import 'popular_food_view.dart';
@@ -43,7 +43,7 @@ class SwiggyScreen extends StatelessWidget {
                     const CustomDividerView(),
                     NewFoodView(),
                     const CustomDividerView(),
-                    PopularFoodView(),
+                    const PopularFoodView(),
                     const CustomDividerView(),
 
                     //const FoodGroceriesAvailabilityView(),
@@ -79,7 +79,7 @@ class SwiggyScreen extends StatelessWidget {
     height: 60.0,
     child: Row(
       children: <Widget>[
-        Text('eMenu', style: Theme.of(context).textTheme.headline4!.copyWith(fontSize: 21.0)),
+        Text('marketplace', style: Theme.of(context).textTheme.headline4!.copyWith(fontSize: 21.0)),
         /*UIHelper.horizontalSpaceExtraSmall(),
         const Spacer(),
         const Icon(Icons.local_offer),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 class SearchFoodListItemView extends StatelessWidget {
   const SearchFoodListItemView({

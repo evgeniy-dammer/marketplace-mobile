@@ -1,5 +1,5 @@
-name: emenu_client
-description: eMenu Client
+name: marketplace_client
+description: marketplace Client
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,6 +30,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 
 dependencies:
+  protobuf: ^2.1.0
+  grpc: ^3.1.0
   cupertino_icons: ^1.0.5
   flutter_rating_bar: ^4.0.1
   card_swiper: ^2.0.4

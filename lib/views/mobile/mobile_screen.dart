@@ -1,4 +1,4 @@
-import 'package:emenu_client/views/mobile/swiggy/genie/genie_screen.dart';
+import 'package:marketplace_client/views/mobile/swiggy/genie/genie_screen.dart';
 import 'package:flutter/material.dart';
 
 class MobileScreen extends StatelessWidget {

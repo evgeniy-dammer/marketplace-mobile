@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/tab_desktop/menu.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/models/tab_desktop/menu.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 class MenuView extends StatelessWidget {
   const MenuView({Key? key, this.expandFlex = 2, this.isTab = false})

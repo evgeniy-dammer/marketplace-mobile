@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/category.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/models/category.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 class CategoriesView extends StatelessWidget {
   final categories = Category.getCategories();

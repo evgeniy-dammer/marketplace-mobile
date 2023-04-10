@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 class GenieGroceryCardView extends StatelessWidget {
   const GenieGroceryCardView({

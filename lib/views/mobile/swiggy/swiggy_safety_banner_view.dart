@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
 
 class SwiggySafetyBannerView extends StatelessWidget {
   const SwiggySafetyBannerView({Key? key}) : super(key: key);

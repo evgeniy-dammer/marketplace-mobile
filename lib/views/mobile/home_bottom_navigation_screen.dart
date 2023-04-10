@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/views/mobile/search/search_screen.dart';
-import 'package:emenu_client/views/mobile/swiggy/swiggy_screen.dart';
+import 'package:marketplace_client/views/mobile/search/search_screen.dart';
+import 'package:marketplace_client/views/mobile/swiggy/swiggy_screen.dart';
 import '../../utils/app_colors.dart';
 import 'account/account_screen.dart';
 import 'cart/cart_screen.dart';

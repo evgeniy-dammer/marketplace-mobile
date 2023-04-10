@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/swiggy/popular_food_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/food_groceries_availability_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/in_the_spotlight_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/banner/banner_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/popular_brand_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/categories_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/restaurants/restaurant_vertical_list_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/swiggy_safety_banner_view.dart';
-import 'package:emenu_client/views/mobile/swiggy/swiggy_screen.dart';
-import 'package:emenu_client/views/mobile/swiggy/top_offer_view.dart';
-import 'package:emenu_client/widgets/custom_divider_view.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/views/mobile/swiggy/popular_food_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/food_groceries_availability_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/in_the_spotlight_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/banner/banner_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/popular_brand_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/categories_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/restaurants/restaurant_vertical_list_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/swiggy_safety_banner_view.dart';
+import 'package:marketplace_client/views/mobile/swiggy/swiggy_screen.dart';
+import 'package:marketplace_client/views/mobile/swiggy/top_offer_view.dart';
+import 'package:marketplace_client/widgets/custom_divider_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key, this.expandFlex = 4}) : super(key: key);
@@ -53,7 +53,7 @@ class _Body extends StatelessWidget {
             CategoriesView(),
             const CustomDividerView(),
             const SwiggySafetyBannerView(),
-            PopularFoodView(),
+            const PopularFoodView(),
             const CustomDividerView(),
             TopOffersViews(),
             const CustomDividerView(),

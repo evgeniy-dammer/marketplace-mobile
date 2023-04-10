@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/new_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/views/mobile/swiggy/restaurants/restaurant_detail_screen.dart';
+import 'package:marketplace_client/models/new_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/views/mobile/swiggy/restaurants/restaurant_detail_screen.dart';
 
 class NewFoodView extends StatelessWidget {
   final foods = NewFood.getNewFoods();

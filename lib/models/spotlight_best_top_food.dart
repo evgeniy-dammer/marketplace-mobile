@@ -1,3 +1,5 @@
+import '../services/item.pb.dart';
+
 class SpotlightBestTopFood {
   const SpotlightBestTopFood({
     required this.image,
@@ -13,70 +15,70 @@ class SpotlightBestTopFood {
   final String coupon;
   final String ratingTimePrice;
 
-  static List<List<SpotlightBestTopFood>> getSpotlightRestaurants() {
-    return const [
+  static List<List<Item>> getSpotlightRestaurants() {
+    return [
       [
-        SpotlightBestTopFood(
-          image: 'assets/images/food1.jpg',
+        Item(
+          id: 'assets/images/food1.jpg',
           name: 'Breakfast Expresss',
-          desc: 'Continental North Indian, South Indian',
-          coupon: '20 \$ off | Use JUMBO',
-          ratingTimePrice: '4.1 45 mins - Rs 200 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
-        SpotlightBestTopFood(
-          image: 'assets/images/food2.jpg',
+        Item(
+          id: 'assets/images/food2.jpg',
           name: 'Namma Veedu Bhavan',
-          desc: 'South Indian',
-          coupon: '20 \$ off | Use SWIGGYIT',
-          ratingTimePrice: '4.1 35 mins - Rs 150 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
       ],
       [
-        SpotlightBestTopFood(
-          image: 'assets/images/food3.jpg',
+        Item(
+          id: 'assets/images/food3.jpg',
           name: 'A2B Chennai',
-          desc: 'South Indian',
-          coupon: '30 \$ off | Use A2BSUPER',
-          ratingTimePrice: '4.2 32 mins - Rs 130 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
-        SpotlightBestTopFood(
-          image: 'assets/images/food4.jpg',
+        Item(
+          id: 'assets/images/food4.jpg',
           name: 'Dinner Expresss',
-          desc: 'North Indian',
-          coupon: '20 \$ off | Use JUMBO',
-          ratingTimePrice: '3.8 25 mins - Rs 200 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
       ],
       [
-        SpotlightBestTopFood(
-          image: 'assets/images/food5.jpg',
+        Item(
+          id: 'assets/images/food5.jpg',
           name: 'Parota King',
-          desc: 'South Indian',
-          coupon: '20 \$ off | Use SWIGGYIT',
-          ratingTimePrice: '4.1 55 mins - Rs 100 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
-        SpotlightBestTopFood(
-          image: 'assets/images/food6.jpg',
+        Item(
+          id: 'assets/images/food6.jpg',
           name: 'Mass Hotel',
-          desc: 'South Indian',
-          coupon: '30 \$ off | Use JUMBO',
-          ratingTimePrice: '4.3 22 mins - Rs 150 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
       ],
       [
-        SpotlightBestTopFood(
-          image: 'assets/images/food7.jpg',
+        Item(
+          id: 'assets/images/food7.jpg',
           name: 'Mumbai Mirchi',
-          desc: 'South Indian',
-          coupon: '20 \$ off | Use JUMBO',
-          ratingTimePrice: '4.1 25 mins - Rs 120 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
-        SpotlightBestTopFood(
-          image: 'assets/images/food8.jpg',
+        Item(
+          id: 'assets/images/food8.jpg',
           name: 'BBQ Nation',
-          desc: 'South Indian',
-          coupon: '30 \$ off | Use JUMBO',
-          ratingTimePrice: '4.3 42 mins - Rs 350 for two',
+          quantity: 5,
+          price: 5.5,
+          status: true,
         ),
       ]
     ];

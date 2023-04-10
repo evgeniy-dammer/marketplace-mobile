@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/spotlight_best_top_food.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
-import 'package:emenu_client/widgets/mobile/spotlight_best_top_food_item.dart';
-import 'package:emenu_client/widgets/responsive.dart';
+import 'package:marketplace_client/models/spotlight_best_top_food.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
+import 'package:marketplace_client/widgets/mobile/spotlight_best_top_food_item.dart';
+import 'package:marketplace_client/widgets/responsive.dart';
 
 class InTheSpotlightView extends StatelessWidget {
   final restaurants = SpotlightBestTopFood.getSpotlightRestaurants();

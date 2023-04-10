@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:emenu_client/models/tab_desktop/order_menu.dart';
-import 'package:emenu_client/utils/app_colors.dart';
-import 'package:emenu_client/utils/ui_helper.dart';
+import 'package:marketplace_client/models/tab_desktop/order_menu.dart';
+import 'package:marketplace_client/utils/app_colors.dart';
+import 'package:marketplace_client/utils/ui_helper.dart';
 
 class CartView extends StatelessWidget {
   const CartView({Key? key, this.isTab = false}) : super(key: key);
